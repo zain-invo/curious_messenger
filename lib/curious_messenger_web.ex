@@ -20,7 +20,7 @@ defmodule CuriousMessengerWeb do
   def controller do
     quote do
       use Phoenix.Controller, namespace: CuriousMessengerWeb
-
+      import Phoenix.LiveView.Controller
       import Plug.Conn
       import CuriousMessengerWeb.Gettext
       alias CuriousMessengerWeb.Router.Helpers, as: Routes
@@ -36,6 +36,7 @@ defmodule CuriousMessengerWeb do
       # Import convenience functions from controllers
       import Phoenix.Controller,
         only: [get_flash: 1, get_flash: 2, view_module: 1, view_template: 1]
+      import Phoenix.LiveView.Helpers
 
       # Include shared imports and aliases for views
       unquote(view_helpers())

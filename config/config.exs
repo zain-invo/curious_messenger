@@ -15,7 +15,7 @@ config :curious_messenger, CuriousMessengerWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: CuriousMessengerWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: CuriousMessenger.PubSub,
-  live_view: [signing_salt: "v7/DiDiJ"]
+  live_view: [signing_salt: "BS20tbx1tR9Grzw8dWkkoykcfOjDMzkS"]
 
 # Configures the mailer
 #
