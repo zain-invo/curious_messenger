@@ -31,6 +31,8 @@ defmodule CuriousMessengerWeb.Endpoint do
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :curious_messenger
   end
 
+
+
   plug Phoenix.LiveDashboard.RequestLogger,
     param_key: "request_logger",
     cookie_key: "request_logger"
@@ -46,5 +48,8 @@ defmodule CuriousMessengerWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug Pow.Plug.Session,
+  otp_app: :curious_messenger,
+  cache_store_backend: Pow.Store.Backend.MnesiaCache
   plug CuriousMessengerWeb.Router
 end

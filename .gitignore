@@ -31,4 +31,6 @@ curious_messenger-*.tar
 # In case you use Node.js/npm, you want to ignore these.
 npm-debug.log
 /assets/node_modules/
+# Mnesia Cached files
+/Mnesia.*
 

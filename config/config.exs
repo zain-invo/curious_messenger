@@ -13,7 +13,8 @@ config :curious_messenger,
 # Configures the endpoint
 config :curious_messenger, CuriousMessengerWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: CuriousMessengerWeb.ErrorView, accepts: ~w(html json), layout: false],
+  secret_key_base: "S5tVziAff1pSJIeJavzx3WFFWo5gaz8OxDQB8ZXEpQh/IOxET++XFLzbrxNFfDWX",
+  render_errors: [view: CuriousMessengerWeb.ErrorView, accepts: ~w(html json)],
   pubsub_server: CuriousMessenger.PubSub,
   live_view: [signing_salt: "BS20tbx1tR9Grzw8dWkkoykcfOjDMzkS"]
 
@@ -47,6 +48,10 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :curious_messenger, :pow,
+  user: CuriousMessenger.Auth.User,
+  repo: CuriousMessenger.Repo,
+  web_module: CuriousMessengerWeb
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

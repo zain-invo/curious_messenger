@@ -1,10 +1,8 @@
 defmodule CuriousMessenger.Chat.MessageReaction do
   use Ecto.Schema
   import Ecto.Changeset
-
   alias CuriousMessenger.Auth.User
-  alias CuriousMessenger.Chat.Emoji
-  alias CuriousMessenger.Chat.Message
+  alias CuriousMessenger.Chat.{Emoji, Message}
 
   schema "chat_message_reactions" do
     belongs_to :user, User
